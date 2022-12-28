@@ -1,0 +1,21 @@
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        int sum = 0;                                        //initialize sum
+        vector<int> answer;                                 //initialize new array to set the indexes to
+        for(int i = 0; i < nums.size(); i++){               //first for loop used for the first number to be added
+            for(int j = 1; j < nums.size(); j++){           //second for loop used for the second number to be added
+                sum = nums[i] + nums[j];                    //sum equals the sum of the values at those indexes
+                if(i == j){
+                    break;
+                }
+                if(sum == target){                          //if sum equals target 
+                    answer.push_back(i);                    //push indexes into new array and return that array
+                    answer.push_back(j);
+                    return answer;
+                }
+            }
+        }
+        return nums;
+    }
+};
